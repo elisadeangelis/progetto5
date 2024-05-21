@@ -14,6 +14,10 @@ def music():
 def book():
     return render_template("book.html")
 
+@app.route('/music2')
+def music():
+    return render_template("music2.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
 
