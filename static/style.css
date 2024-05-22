@@ -1,0 +1,52 @@
+.testo-bianco {
+    font-family: 'Fraunces', sans-serif;
+    color: white;
+}
+
+.nav-bg {
+    background-color: rgba(0, 100, 255, 0.5);
+}
+
+.cornice {
+    border: 5px groove goldenrod;
+}
+
+.sezione {
+    transition: 0.5s;
+}
+
+.sezione:hover {
+    background-image: url(https://artivive.com/assets/uploads/2022/04/christopher-jeauhn-bayne_hummingbird_artwork_image.jpg);
+    width: 350px;
+    height: 350px;
+    transition: 0.5s;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #c2c2c2;
+    text-align: left;
+    padding: 8px;
+}
+
+tr {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+@media screen and (min-width: 992px) and (max-width: 2000px) {
+    #footer-recensioni {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
