@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Museo</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 </head>
 
 <body
-    style="background-image: url(https://images.alphacoders.com/133/1331567.png); height: 100vh; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    style="background-image: url(https://wallpapers.com/images/featured/museum-background-i46ank5l1sk9bubq.jpg); height: 100vh; background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
     <nav class="nav navbar nav-bg sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
@@ -37,8 +37,46 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="d-flex justify-content-center align-items-center mb-5">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Anno</th>
+                        <th>Opera</th>
+                        <th>Info</th>
+                    </tr>
+
+                    <tr>
+                        <td>Id</td>
+                        <td>Prova Nome</td>
+                        <td>Prova Cognome</td>
+                        <td>Prova Anno</td>
+                        <td>Prova Opera</td>
+                        <td>
+                            <a href="#" class="myButton">Dettagli</a>
+                            <!--
+                                <div id="popup" class="popup">
+                                <div class="popup-content">
+                                    <span class="close-btn" onclick="closePopup()">&times;</span>
+                                    <h2 id="popup-title"></h2>
+                                    <p id="popup-artist"></p>
+                                    <p id="popup-album"></p>
+                                    <p id="popup-year"></p>
+                                </div>
+                            </div>
+                            -->
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
     </div>
-    <footer id="footer-recensioni">
+    <footer id="footer-recensioni"> <!--Togliere l'id dopo aver caricato i dati nella tabella-->
         <div class="container-fluid bg-dark mt-5">
             <div class="row">
                 <div class="col-lg-12">
@@ -86,6 +124,19 @@
             </div>
         </div>
     </footer>
+    <script>
+        function openPopup(title, artist, album, year) {
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-artist').innerText = "Artist: " + artist;
+            document.getElementById('popup-album').innerText = "Album: " + album;
+            document.getElementById('popup-year').innerText = "Publisher: " + year;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
