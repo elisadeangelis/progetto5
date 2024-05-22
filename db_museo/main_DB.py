@@ -1,5 +1,6 @@
 from funzioni_db import *
 from query import *
+import csv
 
 
 
@@ -13,3 +14,4 @@ connection = create_db_connection("localhost", "root","", DB_NAME)
 
 execute_query(connection, create_table_artisti)
 execute_query(connection, create_table_artworks)
+inserisci_dati_artisti(connection, 'artisti', 'db_museo/artists_cleaned.csv')
