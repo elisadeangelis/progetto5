@@ -78,12 +78,15 @@ def execute_list_query(connection, sql, val):
 
 def inserisci_dati_artisti(connection, nome_tabella, file):
     cursor = connection.cursor()
-    query = f"INSERT INTO '{nome_tabella}' ('{Artist_ID}', '{Name}', '{Nationality}', '{Gender}', '{Birth_Year}', '{Death_Year}') VALUES {'%s','%s','%s','%s','%s','%s'}"
+    query = f"""INSERT INTO {nome_tabella} (Artist_ID, Name, Nationality, Gender, Birth_Year, Death_Year) 
+    VALUES (%s,%s,%s,%s,%s,%s)
+    """
     with open(file, newline="" ,encoding="utf-8") as f:
         lett = csv.reader(f)
         header = next(lett)
         for riga in lett:
             cursor.execute(query, riga)
     connection.commit()
+    cursor.close()
             
             
