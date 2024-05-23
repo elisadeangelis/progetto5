@@ -13,6 +13,50 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
         rel="stylesheet">
+    <style>
+        /* Basic styles for the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 
 <body
@@ -29,6 +73,18 @@
             </a>
         </div>
     </nav>
+    <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+
+            <a href="#">italian</a>
+            <a href="#">danish</a>
+            <a href="#">american</a>
+            <a href="#">french</a>
+            <a href="#">argentine</a>
+
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -39,7 +95,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <table class="d-flex justify-content-center align-items-center mb-5">
+                <table id="table_artist" class="d-flex justify-content-center align-items-center mb-5">
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
@@ -52,7 +108,7 @@
                         <td>{{artista.name}}</td>
                         <td>{{artista.nationality}}</td>
                         <td>
-                            <a href="artista/id" target="_blank" class="myButton">Vedi Opere</a>
+                            <a href="/artista/{{artista.artist_id}}" target="_blank" class="myButton">Vedi Opere</a>
                         </td>
                     </tr>
                     {% endfor %}

@@ -20,13 +20,19 @@
         <div class="box">
             <img src="https://www.shutterstock.com/shutterstock/photos/535853263/display_1500/stock-vector-profile-photo-vector-placeholder-pic-male-person-default-profile-gray-photo-picture-avatar-535853263.jpg"
                 alt="artista">
-            <h1>{{artista.nome}}</h1>
-            <p>descrizione</p>
-            <p>descrizione</p>
-            <p>descrizione</p>
-            <p>descrizione</p>
+            <h1>{{artista.name}}</h1>
+            <p>{{artista.nationality}}</p>
+            <p>{{artista.gender}}</p>
+            <p>{{artista.birth_year}}</p>
+            <p>{{artista.death_year}}</p>
         </div>
     </div>
+    <h2 class="testo-bianco">Opere dell'artista</h2>
+    <ul class="testo-bianco">
+        {% for opera in lista_opere %}
+        <li>{{opera.title}}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
