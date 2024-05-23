@@ -42,41 +42,27 @@
                 <table class="d-flex justify-content-center align-items-center mb-5">
                     <tr>
                         <th>Id</th>
-                        <th>Nome</th>
-                        <th>Cognome</th>
+                        <th>Titolo</th>
                         <th>Anno</th>
-                        <th>Opera</th>
                         <th>Info</th>
                     </tr>
-
+                    {% for opera in opere %}
                     <tr>
-                        <td>Id</td>
-                        <td>Prova Nome</td>
-                        <td>Prova Cognome</td>
-                        <td>Prova Anno</td>
-                        <td>Prova Opera</td>
+                        <td>{{opera.artwork_id}}</td>
+                        <td>{{opera.title}}</td>
+                        <td>{{opera.date}}</td>
                         <td>
-                            <a href="#" class="myButton">Dettagli</a>
-                            <!--
-                                <div id="popup" class="popup">
-                                <div class="popup-content">
-                                    <span class="close-btn" onclick="closePopup()">&times;</span>
-                                    <h2 id="popup-title"></h2>
-                                    <p id="popup-artist"></p>
-                                    <p id="popup-album"></p>
-                                    <p id="popup-year"></p>
-                                </div>
-                            </div>
-                            -->
+                            <a onclick="openPopup('{{opera.medium}}', '{{opera.credit}}', '{{opera.acquisition_date}}', '{{opera.object_number}}')"
+                                class="myButton">Dettagli</a>
                         </td>
                     </tr>
-
+                    {% endfor %}
                 </table>
             </div>
 
         </div>
     </div>
-    <footer id="footer-recensioni"> <!--Togliere l'id dopo aver caricato i dati nella tabella-->
+    <footer>
         <div class="container-fluid bg-dark mt-5">
             <div class="row">
                 <div class="col-lg-12">
@@ -124,12 +110,21 @@
             </div>
         </div>
     </footer>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-artist"></p>
+            <p id="popup-album"></p>
+            <p id="popup-year"></p>
+        </div>
+    </div>
     <script>
         function openPopup(title, artist, album, year) {
             document.getElementById('popup-title').innerText = title;
-            document.getElementById('popup-artist').innerText = "Artist: " + artist;
-            document.getElementById('popup-album').innerText = "Album: " + album;
-            document.getElementById('popup-year').innerText = "Publisher: " + year;
+            document.getElementById('popup-artist').innerText = "Medium: " + artist;
+            document.getElementById('popup-album').innerText = "Credit: " + album;
+            document.getElementById('popup-year').innerText = "Acquisition Date: " + year;
             document.getElementById('popup').style.display = 'block';
         }
 

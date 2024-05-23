@@ -41,11 +41,18 @@ def home():
     return render_template("home.html")
 @app.route('/artisti')
 def artisti():
-    return render_template("artisti.html")
+    lista_artisti = execute_query('SELECT * from artist')
+    return render_template("artisti.html", artisti=lista_artisti)
+
+@app.route('/artista/<nome>')
+def artista(nome):
+    artista = execute_query('SELECT * FROM artist WHERE name = %s', (nome,))
+    return render_template("artista.html", artista=artista)
 
 @app.route('/opere')
 def opere():
-    return render_template("opere.html")
+    lista_opere = execute_query('SELECT * FROM artwork')
+    return render_template("opere.html", opere=lista_opere)
 
 if __name__ == '__main__':
     app.run(debug=True)

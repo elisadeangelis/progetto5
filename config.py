@@ -1,5 +1,5 @@
 class Config:
     MYSQL_HOST = 'localhost'
     MYSQL_USER = 'root'
-    MYSQL_PASSWORD = ''
-    MYSQL_DB = 'museo'
+    MYSQL_PASSWORD = 'root'
+    MYSQL_DB = 'museum'

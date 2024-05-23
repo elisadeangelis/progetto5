@@ -43,49 +43,25 @@
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>Cognome</th>
-                        <th>Anno</th>
-                        <th>Opera</th>
+                        <th>Nazionalità</th>
                         <th>Info</th>
                     </tr>
-
+                    {% for artista in artisti %}
                     <tr>
-                        <td>Id</td>
-                        <td>Prova Nome</td>
-                        <td>Prova Cognome</td>
-                        <td>Prova Anno</td>
-                        <td>Prova Opera</td>
+                        <td>{{artista.artist_id}}</td>
+                        <td>{{artista.name}}</td>
+                        <td>{{artista.nationality}}</td>
                         <td>
-                            <a href="#" class="myButton">Vedi Opere</a>
+                            <a href="artista/id" target="_blank" class="myButton">Vedi Opere</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Id</td>
-                        <td>Prova Nome</td>
-                        <td>Prova Cognome</td>
-                        <td>Prova Anno</td>
-                        <td>Prova Opera</td>
-                        <td>
-                            <a class="myButton">Vedi Opere</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Id</td>
-                        <td>Prova Nome</td>
-                        <td>Prova Cognome</td>
-                        <td>Prova Anno</td>
-                        <td>Prova Opera</td>
-                        <td>
-                            <a href="#" class="myButton">Vedi Opere</a>
-                        </td>
-                    </tr>
-
+                    {% endfor %}
                 </table>
             </div>
 
         </div>
     </div>
-    <footer id="footer-recensioni">
+    <footer>
         <div class="container-fluid bg-dark mt-5">
             <div class="row">
                 <div class="col-lg-12">
@@ -137,8 +113,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-<!--
-    
--->
+<!---->
 
 </html>
